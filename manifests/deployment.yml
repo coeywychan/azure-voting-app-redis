@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: coeywychanazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coeywychanazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: coeywychanazurevotingappredis 
+    spec:
+      containers:
+        - name: coeywychanazurevotingappredis 
+          image: permissiontest.azurecr.io/coeywychanazurevotingappredis
+          ports:
+          - containerPort: 80
